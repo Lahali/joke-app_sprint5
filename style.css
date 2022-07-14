@@ -1,10 +1,53 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,300;0,400;1,200;1,300;1,400&display=swap'); */
+body {
+    background-image: url(./imagenes/15263142-riendo-personas-titulares-de-un-tablero-en-blanco-para-su-mensaje.webp);
+    background-repeat: no-repeat;
+   background-size: cover;
+    height: 100%;
+}
+
+main  {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+    padding-top: 3rem;
+    
+}
 
 .container_joke {
     border: 0.25rem;
     border-style: solid;
-    border-color: black;
+    border-color: #FFE652;
     border-radius: 1rem;
     background-color: cornsilk;
+    padding: 2rem;
+    width: 50%;
+    margin-left: 25%;
+    box-shadow: 0 1rem 1rem 0 #FFE652;
 }
+
+h2 {
+    text-align: center;
+}
+p {
+    text-align: center;
+}
+.newJoke {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 1rem;
+    background-color: #71DFE7;
+    color: aliceblue;
+    border: none;
+    border-radius: 0.5rem;
+    width: 15rem;
+    margin-top: 1rem;
+}
+
+.punctuation {
+    background-color: #009DAE;
+    margin: 1rem;
+    padding: 1rem;
+    border: none;
+    border-radius: 0.5rem;
+}
+
 

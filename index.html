@@ -11,9 +11,12 @@
 <body>
   <main>
     <div class="container_joke">
-        <h2>Ready for a joke?</h2>
+        <h2>Ready for a joke? 🤣 </h2>
         <p id="answer"></p>
-        <button onclick="getAJoke()">Nuevo chiste</button>
+        <button class="punctuation" onclick="giveReport(1)" id="onePoint">😕</button>
+        <button class="punctuation" onclick="giveReport(2)" id="twoPoints">😁</button>
+        <button class="punctuation" onclick="giveReport(3)" id="threePoints">🤣</button><br/>
+        <button class="newJoke" onclick="getAJoke()">Nuevo chiste</button>
     </div>
   </main>
 

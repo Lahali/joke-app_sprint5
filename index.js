@@ -6,14 +6,41 @@ async function getAJoke() {
     headers: {
       Accept: "application/json",
     },
-  }).then((response) => response.json())
+  }).then((response) => response.json());
 
   console.log(answer);
 
+  HTMLelement.innerHTML = answer.joke;
+}
 
+const reportJokes = [];
 
- HTMLelement.innerHTML = answer.joke
+function giveReport(vote) {
+  const jokes = answer;
+  let punctuationValue = 0;
 
+  if(!HTMLelement.innerText) return alert('No jokes, no punctuation!!')
+
+  if (vote === 1) {
+    punctuationValue = 1;
+  }
+  if (vote === 2) {
+    punctuationValue = 2;
+  }
+  if (vote === 3) {
+    punctuationValue = 3;
+  }
+  const currentDate = new Date();
+
+  reportJokes.push({
+    score: punctuationValue,
+    date: currentDate,
+    joke: HTMLelement.innerHTML,
+  });
+
+  console.log(punctuationValue);
+  console.log(currentDate);
+  console.log(reportJokes);
 }
 
 // fetch(`${API_URL}/users`)
