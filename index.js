@@ -1,16 +1,32 @@
 const API_URL = "https://icanhazdadjoke.com/";
+const API_Chuck = "https://api.chucknorris.io/jokes/random";
 const HTMLelement = document.getElementById("answer");
 
 async function getAJoke() {
-  const answer = await fetch(API_URL, {
+  const dadJokes = await fetch(API_URL, {
     headers: {
       Accept: "application/json",
     },
   }).then((response) => response.json());
 
-  console.log(answer);
+  //console.log(dadJokes);
 
-  HTMLelement.innerHTML = answer.joke;
+  //Línea para imprimir sólo el ejercicio 1
+  //HTMLelement.innerHTML = dadJokes.joke;
+
+  const chuckNorrisJokes = await fetch(API_Chuck, {
+    headers: {
+      Accept: "application/json",
+    },
+  }).then((answer) => answer.json());
+
+  const jokesArray = [dadJokes.joke, chuckNorrisJokes.value];
+
+  // generamos un número aleatorio, recordatorio: Math.floor da un número entero!
+  const randomJokes = Math.floor(Math.random() * jokesArray.length);
+  const answer = jokesArray[randomJokes]
+  HTMLelement.innerHTML = answer
+
   //document.getElementById("onePoint").style = "inline";
 }
 
@@ -20,49 +36,36 @@ function giveReport(vote) {
   const jokes = HTMLelement.innerHTML;
   let punctuationValue = 0;
 
-  if(!HTMLelement.innerText) return alert('No jokes, no punctuation!!')
+  // validación para evitar puntuaciones sin chistes
+  if (!HTMLelement.innerText) return alert("No jokes, no punctuation!!");
 
-  if (vote === 1) {
-    punctuationValue = 1;
-  }
-  if (vote === 2) {
-    punctuationValue = 2;
-  }
-  if (vote === 3) {
-    punctuationValue = 3;
-  }
+  if (vote === 1) punctuationValue = 1;
+  if (vote === 2) punctuationValue = 2;
+  if (vote === 3) punctuationValue = 3;
+  
   const currentDate = new Date();
-
   reportJokes.push({
     score: punctuationValue,
     date: currentDate,
     joke: jokes,
   });
 
-
   console.log(punctuationValue);
   console.log(currentDate);
   console.log(reportJokes);
 }
 
-const API_Weather = "https://www.el-tiempo.net/api/json/v2/provincias/08/municipios/08019"
+const API_Weather =
+  "https://www.el-tiempo.net/api/json/v2/provincias/08/municipios/08019";
 async function tellTheWeather() {
   const weather = await fetch(API_Weather, {
     headers: {
-      Accept: "application/json"
-    }
-  }).then((response) => response.json())
+      Accept: "application/json",
+    },
+  }).then((response) => response.json());
 
-console.log(weather.temperatura_actual)
-const weatherPrinted = document.getElementById("weather")
-const city = "Barcelona"
-weatherPrinted.innerHTML = `${city} </br> ${weather.temperatura_actual}`
-
+  console.log(weather.temperatura_actual);
+  const weatherPrinted = document.getElementById("weather");
+  const city = "Barcelona";
+  weatherPrinted.innerHTML = `${city} </br> ${weather.temperatura_actual}`;
 }
-
-// fetch(`${API_URL}/users`)
-//   .then((response) => response.json())
-//   .then((users) => {
-//     const template = users.map((user) => `<li>${user.name} ${user.email}</li>`);
-//     HTMLResponse.innerHTML = `<ul>${template}</ul>`
-//   });
