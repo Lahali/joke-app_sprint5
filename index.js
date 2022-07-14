@@ -11,12 +11,13 @@ async function getAJoke() {
   console.log(answer);
 
   HTMLelement.innerHTML = answer.joke;
+  //document.getElementById("onePoint").style = "inline";
 }
 
 const reportJokes = [];
 
 function giveReport(vote) {
-  const jokes = answer;
+  const jokes = HTMLelement.innerHTML;
   let punctuationValue = 0;
 
   if(!HTMLelement.innerText) return alert('No jokes, no punctuation!!')
@@ -35,12 +36,28 @@ function giveReport(vote) {
   reportJokes.push({
     score: punctuationValue,
     date: currentDate,
-    joke: HTMLelement.innerHTML,
+    joke: jokes,
   });
+
 
   console.log(punctuationValue);
   console.log(currentDate);
   console.log(reportJokes);
+}
+
+const API_Weather = "https://www.el-tiempo.net/api/json/v2/provincias/08/municipios/08019"
+async function tellTheWeather() {
+  const weather = await fetch(API_Weather, {
+    headers: {
+      Accept: "application/json"
+    }
+  }).then((response) => response.json())
+
+console.log(weather.temperatura_actual)
+const weatherPrinted = document.getElementById("weather")
+const city = "Barcelona"
+weatherPrinted.innerHTML = `${city} </br> ${weather.temperatura_actual}`
+
 }
 
 // fetch(`${API_URL}/users`)

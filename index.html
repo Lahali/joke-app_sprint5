@@ -8,7 +8,10 @@
     <link rel="stylesheet" href="./style.css">
   
 </head>
-<body>
+<body onload="tellTheWeather()">
+  <section class="localWeather">
+    <p id="weather"></p>
+  </section>
   <main>
     <div class="container_joke">
         <h2>Ready for a joke? 🤣 </h2>
@@ -19,7 +22,6 @@
         <button class="newJoke" onclick="getAJoke()">Nuevo chiste</button>
     </div>
   </main>
-
     <script src="./index.js"></script>
 </body>
 </html>
