@@ -1,0 +1,10 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,300;0,400;1,200;1,300;1,400&display=swap'); */
+
+.container_joke {
+    border: 0.25rem;
+    border-style: solid;
+    border-color: black;
+    border-radius: 1rem;
+    background-color: cornsilk;
+}
+
