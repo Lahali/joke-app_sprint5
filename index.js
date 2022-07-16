@@ -9,15 +9,13 @@ async function getAJoke() {
     },
   }).then((response) => response.json());
 
-  //console.log(dadJokes);
-
   //Línea para imprimir sólo el ejercicio 1
   //HTMLelement.innerHTML = dadJokes.joke;
 
   const chuckNorrisJokes = await fetch(API_Chuck, {
     headers: {
       Accept: "application/json",
-    },
+    }
   }).then((answer) => answer.json());
 
   const jokesArray = [dadJokes.joke, chuckNorrisJokes.value];
@@ -65,7 +63,10 @@ async function tellTheWeather() {
   }).then((response) => response.json());
 
   console.log(weather.temperatura_actual);
+  console.log(weather.description)
   const weatherPrinted = document.getElementById("weather");
   const city = "Barcelona";
-  weatherPrinted.innerHTML = `${city} </br> ${weather.temperatura_actual}`;
+  weatherPrinted.innerHTML = `${city} </br> ${weather.temperatura_actual} ℃`;
 }
+
+

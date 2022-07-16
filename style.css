@@ -1,9 +1,19 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,300;0,400;1,200;1,300;1,400&display=swap'); */
-body {
+/* body {
+primer fondo de pantalla:
   background-image: url(./imagenes/tim-mossholder-imlD5dbcLM4-unsplash.jpeg);
   background-repeat: no-repeat;
   background-size: cover;
   height: 100%;
+} */
+body {
+  
+  background-image: url('./imagenes/blob.svg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 50%;
+  background-attachment: fixed;
+
 }
 
 main {
@@ -13,21 +23,25 @@ main {
 }
 
 .container_joke {
+  /* caja original
   border: 0.25rem;
   border-style: solid;
   border-color: #ffe652;
   border-radius: 1rem;
   background-color: cornsilk;
+  box-shadow: 0 1rem 1rem 0 #ffe652; */
   padding: 2rem;
-  width: 50%;
-  margin-left: 25%;
-  box-shadow: 0 1rem 1rem 0 #ffe652;
+  width: 30%;
+  margin-left: 30%;
+  margin-top: 5%;
 }
 
 h2 {
   text-align: center;
+  color: cornsilk;
 }
 p {
+  color: cornsilk;
   text-align: center;
   font-size: larger;
 }
@@ -35,9 +49,9 @@ p {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   padding: 1rem;
   background-color: #71dfe7;
-  color: aliceblue;
+  color: cornsilk;
   border: none;
-  border-radius: 0.5rem;
+  border-radius: 2rem;
   width: 15rem;
   margin-top: 1rem;
   font-size: large;
@@ -49,7 +63,8 @@ p {
   padding: 1rem;
   border: none;
   border-radius: 0.5rem;
-  /* display: none; */
+  font-size: x-large;
+
 }
 
 .localWeather {
