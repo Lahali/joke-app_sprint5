@@ -61,6 +61,7 @@ async function tellTheWeather() {
       Accept: "application/json",
     },
   }).then((response) => response.json());
+  
 
   console.log(weather.temperatura_actual);
   console.log(weather.description)
