@@ -1,6 +1,7 @@
 const API_URL = "https://icanhazdadjoke.com/";
 const API_Chuck = "https://api.chucknorris.io/jokes/random";
 const HTMLelement = document.getElementById("answer");
+const background = document.getElementById("bodyBackground")
 
 async function getAJoke() {
   const dadJokes = await fetch(API_URL, {
@@ -10,7 +11,7 @@ async function getAJoke() {
   }).then((response) => response.json());
 
   //Línea para imprimir sólo el ejercicio 1
-  //HTMLelement.innerHTML = dadJokes.joke;
+ console.log(dadJokes.joke);
 
   const chuckNorrisJokes = await fetch(API_Chuck, {
     headers: {
@@ -25,12 +26,22 @@ async function getAJoke() {
   const answer = jokesArray[randomJokes]
   HTMLelement.innerHTML = answer
 
-  //document.getElementById("onePoint").style = "inline";
+  //cambio del blob del fondo dependiendo del array de votaciones
+
+  if (reportJokes.length % 2 === 0) {
+    background.style.backgroundImage = "url('imagenes/blob4.svg')"
+  }
+  if (reportJokes.length % 2 !== 0) {
+    background.style.backgroundImage = "url('imagenes/blob.svg')"
+  }
+  
 }
 
 const reportJokes = [];
 
 function giveReport(vote) {
+  //llamo a la función getAJoke para evitar puntuar dos veces el mismo chiste.
+  getAJoke()
   const jokes = HTMLelement.innerHTML;
   let punctuationValue = 0;
 
@@ -40,6 +51,7 @@ function giveReport(vote) {
   if (vote === 1) punctuationValue = 1;
   if (vote === 2) punctuationValue = 2;
   if (vote === 3) punctuationValue = 3;
+
   
   const currentDate = new Date();
   reportJokes.push({
@@ -60,13 +72,16 @@ async function tellTheWeather() {
     headers: {
       Accept: "application/json",
     },
-  }).then((response) => response.json());
-  
+  }).then((response) => response.json()); 
 
   console.log(weather.temperatura_actual);
-  console.log(weather.description)
   const weatherPrinted = document.getElementById("weather");
   const city = "Barcelona";
+  const iconWeatherHTML = document.getElementById("weatherIcon") 
+  let icon
+  // if(weather.temperatura_actual >= 23) {
+  //   icon = 
+  // }
   weatherPrinted.innerHTML = `${city} </br> ${weather.temperatura_actual} ℃`;
 }
 
