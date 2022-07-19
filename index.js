@@ -76,13 +76,12 @@ async function tellTheWeather() {
 
   console.log(weather.temperatura_actual);
   const weatherPrinted = document.getElementById("weather");
-  const city = "Barcelona";
-  const iconWeatherHTML = document.getElementById("weatherIcon") 
-  let icon
-  // if(weather.temperatura_actual >= 23) {
-  //   icon = 
-  // }
-  weatherPrinted.innerHTML = `${city} </br> ${weather.temperatura_actual} ℃`;
+  const city = weather.municipio.NOMBRE_CAPITAL;
+  const weatherInfo = weather.stateSky.description 
+  const temperature = weather.temperatura_actual
+  weatherPrinted.innerHTML = `${city} </br> ${weatherInfo} ${temperature}℃`;
+  console.log(weather.stateSky.description)
+
 }
 
 
