@@ -7,7 +7,7 @@ primer fondo de pantalla:
 } */
 
 body {
-  background-image: url('./imagenes/blob.svg');
+  background-image: url("./imagenes/blob.svg");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: 50%;
@@ -57,6 +57,11 @@ p {
   font-size: large;
 }
 
+.newJoke:hover {
+  background-color: #ffe652;
+  color: #009dae;
+}
+
 #onePoint {
   background-image: url(./imagenes/emoji_think_thinking_icon_123403.svg);
   background-repeat: no-repeat;
@@ -73,6 +78,18 @@ p {
   background-image: url(./imagenes/laugh_lol_smiley_icon_123395.svg);
   background-repeat: no-repeat;
   background-position: center center;
+}
+
+#onePoint:hover {
+  transform: scale(1.5);
+}
+
+#twoPoints:hover {
+  transform: scale(1.5);
+}
+
+#threePoints:hover {
+  transform: scale(1.5);
 }
 
 .punctuation {
