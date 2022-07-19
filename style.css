@@ -5,6 +5,7 @@ primer fondo de pantalla:
   background-size: cover;
   height: 100%;
 } */
+
 body {
   background-image: url('./imagenes/blob.svg');
   background-repeat: no-repeat;
@@ -82,11 +83,12 @@ p {
   border-radius: 0.5rem;
 }
 
-#weatherIcon {
+/* #weatherIcon {
+vertical-align: text-top;
 width: 4rem;
 margin-left: 2%;
 margin-bottom: 10%;
-}
+} */
 
 .localWeather #weather {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
